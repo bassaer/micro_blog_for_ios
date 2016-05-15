@@ -3,24 +3,28 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Microposts-->
         <scene sceneID="Vvi-eb-Dnu">
             <objects>
-                <tableViewController id="vN7-0v-TOj" customClass="MicropostsViewController" sceneMemberID="viewController">
+                <tableViewController id="vN7-0v-TOj" customClass="MicropostsViewController" customModule="micro_blog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HkO-BD-tr4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="hg8-K5-Gso">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="hg8-K5-Gso">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hg8-K5-Gso" id="N14-MW-BaU">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qRN-nk-ZI3" kind="show" identifier="showDetail" id="3UU-dw-pmQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,11 +32,60 @@
                             <outlet property="delegate" destination="vN7-0v-TOj" id="JEx-zK-mEJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="nDZ-ls-iXp"/>
+                    <navigationItem key="navigationItem" title="Microposts" id="nDZ-ls-iXp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAV-AW-zbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="400"/>
+            <point key="canvasLocation" x="634" y="400"/>
+        </scene>
+        <!--Micropost-->
+        <scene sceneID="UDc-8K-EUR">
+            <objects>
+                <viewController title="Micropost" id="qRN-nk-ZI3" customClass="MicropostDetailViewController" customModule="micro_blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pgn-50-kqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="5s9-ey-d0b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cLb-FN-tHl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfW-iN-itC">
+                                <rect key="frame" x="20" y="77" width="560" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="xra-nJ-tip"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3o-oN-5r5">
+                                <rect key="frame" x="20" y="160" width="560" height="340"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TfW-iN-itC" firstAttribute="leading" secondItem="cLb-FN-tHl" secondAttribute="leadingMargin" id="8Eu-m4-O0o"/>
+                            <constraint firstItem="TfW-iN-itC" firstAttribute="leading" secondItem="w3o-oN-5r5" secondAttribute="leading" id="DqR-KV-0cV"/>
+                            <constraint firstItem="w3o-oN-5r5" firstAttribute="top" secondItem="TfW-iN-itC" secondAttribute="bottom" constant="14" id="Nqw-Tl-HMv"/>
+                            <constraint firstItem="TfW-iN-itC" firstAttribute="top" secondItem="Pgn-50-kqm" secondAttribute="bottom" constant="13" id="ZB4-rw-N1E"/>
+                            <constraint firstItem="TfW-iN-itC" firstAttribute="trailing" secondItem="cLb-FN-tHl" secondAttribute="trailingMargin" id="iQT-X5-Y6F"/>
+                            <constraint firstItem="5s9-ey-d0b" firstAttribute="top" secondItem="w3o-oN-5r5" secondAttribute="bottom" constant="100" id="lnm-lX-w0s"/>
+                            <constraint firstItem="TfW-iN-itC" firstAttribute="trailing" secondItem="w3o-oN-5r5" secondAttribute="trailing" id="pST-C8-thE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wfm-su-B0v"/>
+                    <connections>
+                        <outlet property="bodyTextLabel" destination="w3o-oN-5r5" id="V58-dK-MJi"/>
+                        <outlet property="titleTextLabel" destination="TfW-iN-itC" id="mU9-NT-cz6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYH-TU-uQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V5s-tC-xet">
