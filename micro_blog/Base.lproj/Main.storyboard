@@ -6,6 +6,100 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Micropost Create Form Controller-->
+        <scene sceneID="2rh-P2-9XZ">
+            <objects>
+                <viewController id="xK2-zd-Pi3" customClass="MicropostCreateFormController" customModule="micro_blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d8V-oe-enz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZFt-bN-PXe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OYD-c4-bJD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-eP-UwN">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ng4-Iu-KVI"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New Micropost" id="S1G-bi-gHa">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dy8-hB-oqz">
+                                            <connections>
+                                                <action selector="cancelPost:" destination="xK2-zd-Pi3" id="nl5-l8-bBD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="2o9-xc-EFa">
+                                            <connections>
+                                                <action selector="createNewPost:" destination="xK2-zd-Pi3" id="caV-j8-5hR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCB-xc-Zoj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="208"/>
+                                <subviews>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWk-e1-rOr">
+                                        <rect key="frame" x="14" y="59" width="572" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="JOX-1e-iTz"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Body" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kG6-S2-Byc">
+                                        <rect key="frame" x="14" y="68" width="572" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="e10-qs-PI1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4xJ-lj-NQE">
+                                        <rect key="frame" x="14" y="16" width="572" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jNv-1V-rOt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SWk-e1-rOr" firstAttribute="leading" secondItem="kG6-S2-Byc" secondAttribute="leading" id="8FT-xf-DP6"/>
+                                    <constraint firstItem="SWk-e1-rOr" firstAttribute="top" secondItem="4xJ-lj-NQE" secondAttribute="bottom" constant="13" id="C1F-oh-UdD"/>
+                                    <constraint firstItem="4xJ-lj-NQE" firstAttribute="leading" secondItem="SWk-e1-rOr" secondAttribute="leading" id="Gbw-X2-aTa"/>
+                                    <constraint firstItem="SWk-e1-rOr" firstAttribute="trailing" secondItem="nCB-xc-Zoj" secondAttribute="trailingMargin" constant="-6" id="T3e-Hq-iUn"/>
+                                    <constraint firstItem="kG6-S2-Byc" firstAttribute="top" secondItem="SWk-e1-rOr" secondAttribute="bottom" constant="8" id="gXl-UL-3By"/>
+                                    <constraint firstItem="4xJ-lj-NQE" firstAttribute="top" secondItem="nCB-xc-Zoj" secondAttribute="top" constant="16" id="k2k-Xo-u4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="4xJ-lj-NQE" secondAttribute="trailing" constant="14" id="m5R-l5-JAX"/>
+                                    <constraint firstItem="4xJ-lj-NQE" firstAttribute="trailing" secondItem="kG6-S2-Byc" secondAttribute="trailing" id="mKx-If-LW9"/>
+                                    <constraint firstItem="4xJ-lj-NQE" firstAttribute="leading" secondItem="nCB-xc-Zoj" secondAttribute="leadingMargin" constant="6" id="sre-eD-qyV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nCB-xc-Zoj" firstAttribute="leading" secondItem="OYD-c4-bJD" secondAttribute="leadingMargin" constant="-20" id="1aZ-qp-2Gu"/>
+                            <constraint firstItem="ZFt-bN-PXe" firstAttribute="top" secondItem="nCB-xc-Zoj" secondAttribute="bottom" constant="328" id="1dI-yL-HX7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Hd-eP-UwN" secondAttribute="trailing" constant="-20" id="44P-J4-WF9"/>
+                            <constraint firstItem="3Hd-eP-UwN" firstAttribute="top" secondItem="d8V-oe-enz" secondAttribute="bottom" id="Gle-B3-ru1"/>
+                            <constraint firstItem="nCB-xc-Zoj" firstAttribute="centerX" secondItem="3Hd-eP-UwN" secondAttribute="centerX" id="a9R-ic-VTr"/>
+                            <constraint firstItem="nCB-xc-Zoj" firstAttribute="top" secondItem="3Hd-eP-UwN" secondAttribute="bottom" id="asS-7w-ent"/>
+                            <constraint firstItem="3Hd-eP-UwN" firstAttribute="centerX" secondItem="OYD-c4-bJD" secondAttribute="centerX" id="bNB-gF-nze"/>
+                            <constraint firstItem="nCB-xc-Zoj" firstAttribute="centerX" secondItem="OYD-c4-bJD" secondAttribute="centerX" id="pH4-cT-Kjv"/>
+                            <constraint firstItem="3Hd-eP-UwN" firstAttribute="leading" secondItem="OYD-c4-bJD" secondAttribute="leadingMargin" constant="-20" id="w0m-mH-A43"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyText" destination="kG6-S2-Byc" id="K1f-zn-KgZ"/>
+                        <outlet property="titleText" destination="4xJ-lj-NQE" id="iA1-hL-dPW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Py-2V-bdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1342" y="-33"/>
+        </scene>
         <!--Microposts-->
         <scene sceneID="Vvi-eb-Dnu">
             <objects>
@@ -32,11 +126,93 @@
                             <outlet property="delegate" destination="vN7-0v-TOj" id="JEx-zK-mEJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Microposts" id="nDZ-ls-iXp"/>
+                    <navigationItem key="navigationItem" title="Microposts" id="nDZ-ls-iXp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RoA-Ad-4rc">
+                            <connections>
+                                <segue destination="xK2-zd-Pi3" kind="presentation" id="63G-KD-yb0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAV-AW-zbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="400"/>
+            <point key="canvasLocation" x="581" y="400"/>
+        </scene>
+        <!--Micropost Create Form Controller-->
+        <scene sceneID="VWM-cW-Qq1">
+            <objects>
+                <viewController storyboardIdentifier="createNewPost" id="xSF-pd-3L7" customClass="MicropostCreateFormController" customModule="micro_blog" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bdo-ft-LWS"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ap-y5-Rrl"/>
+                    </layoutGuides>
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="XFC-Pa-poq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Body" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hk0-gT-QIx">
+                                <rect key="frame" x="33" y="149" width="534" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="geL-SX-Ydy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rI-ch-ntQ">
+                                <rect key="frame" x="33" y="128" width="534" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ICl-YE-MqK">
+                                <rect key="frame" x="33" y="82" width="534" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="i7m-Db-Hxk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQI-Yq-BdH">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="New Micropost" id="doi-rN-SS4">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xF9-a8-7an">
+                                            <connections>
+                                                <action selector="cancelPost:" destination="xSF-pd-3L7" id="33t-f3-ZrU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="vwc-7H-yES">
+                                            <connections>
+                                                <action selector="postMicropost:" destination="xSF-pd-3L7" id="B0L-qh-0SY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ICl-YE-MqK" firstAttribute="leading" secondItem="XFC-Pa-poq" secondAttribute="leadingMargin" constant="13" id="0TB-K7-oA8"/>
+                            <constraint firstItem="ICl-YE-MqK" firstAttribute="trailing" secondItem="2rI-ch-ntQ" secondAttribute="trailing" id="0hz-oO-Miw"/>
+                            <constraint firstItem="ICl-YE-MqK" firstAttribute="leading" secondItem="2rI-ch-ntQ" secondAttribute="leading" id="PQw-EZ-Rnl"/>
+                            <constraint firstItem="ICl-YE-MqK" firstAttribute="top" secondItem="OQI-Yq-BdH" secondAttribute="bottom" constant="10" id="SZf-9n-1qu"/>
+                            <constraint firstAttribute="trailing" secondItem="OQI-Yq-BdH" secondAttribute="trailing" id="VUd-j0-wfQ"/>
+                            <constraint firstItem="OQI-Yq-BdH" firstAttribute="centerX" secondItem="ICl-YE-MqK" secondAttribute="centerX" id="aix-Pv-xNy"/>
+                            <constraint firstItem="2rI-ch-ntQ" firstAttribute="trailing" secondItem="hk0-gT-QIx" secondAttribute="trailing" id="bH9-Ak-Nd7"/>
+                            <constraint firstItem="2rI-ch-ntQ" firstAttribute="leading" secondItem="hk0-gT-QIx" secondAttribute="leading" id="cbw-NY-RG8"/>
+                            <constraint firstItem="9Ap-y5-Rrl" firstAttribute="top" secondItem="hk0-gT-QIx" secondAttribute="bottom" constant="421" id="fsi-lD-cuj"/>
+                            <constraint firstItem="2rI-ch-ntQ" firstAttribute="top" secondItem="ICl-YE-MqK" secondAttribute="bottom" constant="16" id="vaF-7b-3W0"/>
+                            <constraint firstItem="OQI-Yq-BdH" firstAttribute="top" secondItem="Bdo-ft-LWS" secondAttribute="bottom" constant="8" id="w0O-VC-PHP"/>
+                            <constraint firstItem="hk0-gT-QIx" firstAttribute="top" secondItem="2rI-ch-ntQ" secondAttribute="bottom" constant="20" id="xHe-by-Rl9"/>
+                            <constraint firstItem="OQI-Yq-BdH" firstAttribute="leading" secondItem="XFC-Pa-poq" secondAttribute="leading" id="xUR-Z3-yTO"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="bodyText" destination="hk0-gT-QIx" id="aDC-it-qO9"/>
+                        <outlet property="titleText" destination="ICl-YE-MqK" id="4Ci-Y3-hcQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OxE-fX-9UO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-445"/>
         </scene>
         <!--Micropost-->
         <scene sceneID="UDc-8K-EUR">
@@ -85,12 +261,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYH-TU-uQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342" y="400"/>
+            <point key="canvasLocation" x="1342" y="814"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V5s-tC-xet">
             <objects>
-                <navigationController id="olT-nc-sCF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigation" id="olT-nc-sCF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="07a-KI-4Of">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
