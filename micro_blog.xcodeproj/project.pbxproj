@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A7EE125B1CE8439F00AEA048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE125A1CE8439F00AEA048 /* AppDelegate.swift */; };
-		A7EE125D1CE8439F00AEA048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE125C1CE8439F00AEA048 /* ViewController.swift */; };
 		A7EE12601CE8439F00AEA048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE125E1CE8439F00AEA048 /* Main.storyboard */; };
 		A7EE12621CE8439F00AEA048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EE12611CE8439F00AEA048 /* Assets.xcassets */; };
 		A7EE12651CE8439F00AEA048 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE12631CE8439F00AEA048 /* LaunchScreen.storyboard */; };
 		A7EE12701CE8439F00AEA048 /* micro_blogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE126F1CE8439F00AEA048 /* micro_blogTests.swift */; };
 		A7EE127B1CE8439F00AEA048 /* micro_blogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE127A1CE8439F00AEA048 /* micro_blogUITests.swift */; };
+		A7EE12891CE844FB00AEA048 /* MicropostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE12881CE844FB00AEA048 /* MicropostsViewController.swift */; };
+		A7EE128B1CE8477C00AEA048 /* Micropost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE128A1CE8477C00AEA048 /* Micropost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		A7EE12571CE8439F00AEA048 /* micro_blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE125A1CE8439F00AEA048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7EE125C1CE8439F00AEA048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7EE125F1CE8439F00AEA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7EE12611CE8439F00AEA048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7EE12641CE8439F00AEA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		A7EE12761CE8439F00AEA048 /* micro_blogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = micro_blogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE127A1CE8439F00AEA048 /* micro_blogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = micro_blogUITests.swift; sourceTree = "<group>"; };
 		A7EE127C1CE8439F00AEA048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7EE12881CE844FB00AEA048 /* MicropostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostsViewController.swift; sourceTree = "<group>"; };
+		A7EE128A1CE8477C00AEA048 /* Micropost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Micropost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				A7EE125A1CE8439F00AEA048 /* AppDelegate.swift */,
-				A7EE125C1CE8439F00AEA048 /* ViewController.swift */,
+				A7EE12881CE844FB00AEA048 /* MicropostsViewController.swift */,
 				A7EE125E1CE8439F00AEA048 /* Main.storyboard */,
 				A7EE12611CE8439F00AEA048 /* Assets.xcassets */,
 				A7EE12631CE8439F00AEA048 /* LaunchScreen.storyboard */,
 				A7EE12661CE8439F00AEA048 /* Info.plist */,
+				A7EE128A1CE8477C00AEA048 /* Micropost.swift */,
 			);
 			path = micro_blog;
 			sourceTree = "<group>";
@@ -256,8 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EE125D1CE8439F00AEA048 /* ViewController.swift in Sources */,
+				A7EE128B1CE8477C00AEA048 /* Micropost.swift in Sources */,
 				A7EE125B1CE8439F00AEA048 /* AppDelegate.swift in Sources */,
+				A7EE12891CE844FB00AEA048 /* MicropostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
