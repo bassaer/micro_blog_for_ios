@@ -17,6 +17,7 @@
 		A7EE127B1CE8439F00AEA048 /* micro_blogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE127A1CE8439F00AEA048 /* micro_blogUITests.swift */; };
 		A7EE128B1CE8477C00AEA048 /* Micropost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE128A1CE8477C00AEA048 /* Micropost.swift */; };
 		A7EE128D1CE851BA00AEA048 /* MicropostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE12881CE844FB00AEA048 /* MicropostsViewController.swift */; };
+		E29B6B1D88CDBA500829B99F /* Pods_micro_blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E45DCBABABD2412DE2E1C6C /* Pods_micro_blog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06E90E21376190110402574A /* Pods-micro_blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-micro_blog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-micro_blog/Pods-micro_blog.debug.xcconfig"; sourceTree = "<group>"; };
+		8E45DCBABABD2412DE2E1C6C /* Pods_micro_blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_micro_blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A745E1CD1CE8566300EC85F1 /* MicropostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostDetailViewController.swift; sourceTree = "<group>"; };
 		A745E1CF1CE8733000EC85F1 /* MicropostCreateFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostCreateFormController.swift; sourceTree = "<group>"; };
 		A7EE12571CE8439F00AEA048 /* micro_blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +57,7 @@
 		A7EE12881CE844FB00AEA048 /* MicropostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostsViewController.swift; sourceTree = "<group>"; };
 		A7EE128A1CE8477C00AEA048 /* Micropost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Micropost.swift; sourceTree = "<group>"; };
 		A7EE128C1CE8496C00AEA048 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D758838EDEFC8DAEE2A65A9F /* Pods-micro_blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-micro_blog.release.xcconfig"; path = "Pods/Target Support Files/Pods-micro_blog/Pods-micro_blog.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29B6B1D88CDBA500829B99F /* Pods_micro_blog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +89,18 @@
 		8CCB1025DBB295BAF57F4E75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E45DCBABABD2412DE2E1C6C /* Pods_micro_blog.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A226972F4F41755FEE28B4F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06E90E21376190110402574A /* Pods-micro_blog.debug.xcconfig */,
+				D758838EDEFC8DAEE2A65A9F /* Pods-micro_blog.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A7EE124E1CE8439E00AEA048 = {
@@ -97,6 +112,7 @@
 				A7EE12791CE8439F00AEA048 /* micro_blogUITests */,
 				A7EE12581CE8439F00AEA048 /* Products */,
 				8CCB1025DBB295BAF57F4E75 /* Frameworks */,
+				A226972F4F41755FEE28B4F0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7EE127F1CE8439F00AEA048 /* Build configuration list for PBXNativeTarget "micro_blog" */;
 			buildPhases = (
+				FD8C27CF986BE238CD65B960 /* 📦 Check Pods Manifest.lock */,
 				A7EE12531CE8439F00AEA048 /* Sources */,
 				A7EE12541CE8439F00AEA048 /* Frameworks */,
 				A7EE12551CE8439F00AEA048 /* Resources */,
+				7AAEF2BB2ED1BF2C5A1451C0 /* 📦 Embed Pods Frameworks */,
+				02651E7D2FBAC20EC7B8FDF9 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +288,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02651E7D2FBAC20EC7B8FDF9 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-micro_blog/Pods-micro_blog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AAEF2BB2ED1BF2C5A1451C0 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-micro_blog/Pods-micro_blog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD8C27CF986BE238CD65B960 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7EE12531CE8439F00AEA048 /* Sources */ = {
@@ -419,6 +486,7 @@
 		};
 		A7EE12801CE8439F00AEA048 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E90E21376190110402574A /* Pods-micro_blog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = micro_blog/Info.plist;
@@ -430,6 +498,7 @@
 		};
 		A7EE12811CE8439F00AEA048 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D758838EDEFC8DAEE2A65A9F /* Pods-micro_blog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = micro_blog/Info.plist;
@@ -441,6 +510,7 @@
 		};
 		A7EE12831CE8439F00AEA048 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E90E21376190110402574A /* Pods-micro_blog.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = micro_blogTests/Info.plist;
@@ -453,6 +523,7 @@
 		};
 		A7EE12841CE8439F00AEA048 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D758838EDEFC8DAEE2A65A9F /* Pods-micro_blog.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = micro_blogTests/Info.plist;
@@ -465,6 +536,7 @@
 		};
 		A7EE12861CE8439F00AEA048 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06E90E21376190110402574A /* Pods-micro_blog.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = micro_blogUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -476,6 +548,7 @@
 		};
 		A7EE12871CE8439F00AEA048 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D758838EDEFC8DAEE2A65A9F /* Pods-micro_blog.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = micro_blogUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

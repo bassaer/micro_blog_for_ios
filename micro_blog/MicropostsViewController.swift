@@ -17,6 +17,30 @@ class MicropostsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(MicropostsViewController.onRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func onRefresh(sender: UIRefreshControl) {
+        refreshControl?.beginRefreshing()
+        Micropost.getMicroposts(
+            success: {(microposts) -> Void in
+                self.microposts = microposts.reverse()
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()},
+            failure: {(error) -> Void in
+                let alertController = UIAlertController(
+                    title: "Error",
+                    message: "Error Message",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK", style: .Default, handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                self.refreshControl?.endRefreshing()
+        })
     }
     
     
@@ -43,6 +67,23 @@ class MicropostsViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let micropost = self.microposts[indexPath.row]
+            micropost.deleteMicropost(
+                success: {
+                    print("success delete")
+                    self.microposts.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                },
+                failure: { (error) in
+                    print(error)
+                    print("fail delete")
+                }
+            )
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -53,5 +94,30 @@ class MicropostsViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        refreshData()
+    }
+    
+    func refreshData() {
+        Micropost.getMicroposts(
+            success: {(microposts) -> Void in
+                self.microposts = microposts.reverse()
+                self.tableView.reloadData()
+            },
+            failure: {(error) -> Void in
+                let alertController = UIAlertController(
+                    title: "Error",
+                    message: "Error Message",
+                    preferredStyle: .Alert)
+                
+                alertController.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .Default,
+                    handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+        })
     }
 }

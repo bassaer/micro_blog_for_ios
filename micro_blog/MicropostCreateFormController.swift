@@ -20,6 +20,16 @@ class MicropostCreateFormController: UIViewController {
     
     
     @IBAction func createNewPost(sender: UIBarButtonItem) {
+        
+        let micropost = Micropost(title: titleText.text!, body: bodyText.text!)
+        micropost.createMicropost(
+            success: {
+                print("Success create")
+            },
+            failure: {(error) in
+                print("Fail create")
+            }
+        )
         dismissViewControllerAnimated(true, completion: nil)
     }
     
