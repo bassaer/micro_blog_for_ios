@@ -35,7 +35,7 @@ class Micropost: Mappable, CustomStringConvertible {
     }
     
     class func getMicroposts(success success: [Micropost] -> Void, failure: NSError? -> Void) {
-        Alamofire.request(.GET, "http://localhost:3000/microposts.json").responseJSON { response in
+        Alamofire.request(.GET, "http://192.168.0.78:3000/microposts.json").responseJSON { response in
             if let error = response.result.error {
                 failure(error)
                 return
@@ -56,7 +56,7 @@ class Micropost: Mappable, CustomStringConvertible {
             "body" : self.body!
         ]
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/microposts.json")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.0.78:3000/microposts.json")!)
         request.HTTPMethod = "POST"
         let alamofireRequest = Alamofire.ParameterEncoding.JSON.encode(request, parameters: params).0
         
@@ -72,7 +72,7 @@ class Micropost: Mappable, CustomStringConvertible {
     
     func deleteMicropost(success success: Void -> Void, failure: NSError? -> Void) {
         
-        Alamofire.request(.DELETE, "http://localhost:3000/microposts/\(self.id!).json").responseJSON{ response in
+        Alamofire.request(.DELETE, "http://192.168.0.78:3000/microposts/\(self.id!).json").responseJSON{ response in
             if let error = response.result.error {
                 failure(error)
                 return

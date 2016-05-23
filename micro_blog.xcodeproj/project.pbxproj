@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A745E1CE1CE8566300EC85F1 /* MicropostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745E1CD1CE8566300EC85F1 /* MicropostDetailViewController.swift */; };
 		A745E1D01CE8733000EC85F1 /* MicropostCreateFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745E1CF1CE8733000EC85F1 /* MicropostCreateFormController.swift */; };
+		A7D669B31CF2EDC50048CEE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D669B21CF2EDC50048CEE4 /* LoginViewController.swift */; };
 		A7EE125B1CE8439F00AEA048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE125A1CE8439F00AEA048 /* AppDelegate.swift */; };
 		A7EE12601CE8439F00AEA048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7EE125E1CE8439F00AEA048 /* Main.storyboard */; };
 		A7EE12621CE8439F00AEA048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7EE12611CE8439F00AEA048 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		8E45DCBABABD2412DE2E1C6C /* Pods_micro_blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_micro_blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A745E1CD1CE8566300EC85F1 /* MicropostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostDetailViewController.swift; sourceTree = "<group>"; };
 		A745E1CF1CE8733000EC85F1 /* MicropostCreateFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicropostCreateFormController.swift; sourceTree = "<group>"; };
+		A7D669B21CF2EDC50048CEE4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A7EE12571CE8439F00AEA048 /* micro_blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = micro_blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7EE125A1CE8439F00AEA048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7EE125F1CE8439F00AEA048 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				A745E1CD1CE8566300EC85F1 /* MicropostDetailViewController.swift */,
 				A745E1CF1CE8733000EC85F1 /* MicropostCreateFormController.swift */,
 				A7F50CC41CF19CDF0053332C /* WebViewController.swift */,
+				A7D669B21CF2EDC50048CEE4 /* LoginViewController.swift */,
 			);
 			path = micro_blog;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				A745E1D01CE8733000EC85F1 /* MicropostCreateFormController.swift in Sources */,
 				A7EE128D1CE851BA00AEA048 /* MicropostsViewController.swift in Sources */,
 				A7EE128B1CE8477C00AEA048 /* Micropost.swift in Sources */,
+				A7D669B31CF2EDC50048CEE4 /* LoginViewController.swift in Sources */,
 				A7F50CC51CF19CDF0053332C /* WebViewController.swift in Sources */,
 				A7EE125B1CE8439F00AEA048 /* AppDelegate.swift in Sources */,
 				A7F50CC31CF18C240053332C /* MainTabViewController.swift in Sources */,
